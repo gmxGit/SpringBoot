@@ -1,17 +1,23 @@
-plugins {
-    id 'java'
-}
-
+apply plugin:'java'
+apply plugin:'war'
+apply plugin:'idea'
 group 'org.app'
-version '1.0-SNAPSHOT'
+version '5.0.0'
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+    compileClasspath('org.projectlombok:lombok:1.18.26',
+            'org.springframework.boot:spring-boot-starter-parent:1.5.4.RELEASE',
+            'org.springframework.boot:spring-boot-starter-web:1.5.4.RELEASE',
+            'org.springframework.boot:spring-boot:1.5.4.RELEASE',
+            'org.apache.logging.log4j:log4j:2.20.0'
+    )
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.2'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.9.2'
+
 }
 
 test {
